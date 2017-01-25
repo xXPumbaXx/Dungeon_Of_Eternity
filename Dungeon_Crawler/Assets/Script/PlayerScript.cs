@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviour {
 	void Update ()
     {
         UpdateDirection();
+        CheckForEnnemy();
 
         if (isMoving == true || isTurning == true)//Check if the player is doing an action so 2 action cant be made at the same time
         {
@@ -65,6 +66,14 @@ public class PlayerScript : MonoBehaviour {
             MoveToTile();
         }
 	}
+
+    void CheckForEnnemy()
+    {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
+        {
+            isPlayerTurn = true;
+        }
+    }
 
     void ListenToKey()
     {
