@@ -223,5 +223,6 @@ public class SkeletonScript : MonoBehaviour {
     public void SetCurrentTile(GameObject tile)
     {
         currentTile = tile;
+        
     }
 }
